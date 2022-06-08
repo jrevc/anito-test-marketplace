@@ -1,0 +1,17 @@
+.anito-class-logo {
+  position: relative;
+  width: 22px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.anito-container label h3 {
+  display: inline;
+  vertical-align: middle;
+  font-size: 16px;
+  color: white;
+}
+
+.anito-container.anito-rarity-3 label h3 {
+  color: #333;
+}

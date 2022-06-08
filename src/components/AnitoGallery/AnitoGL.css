@@ -1,0 +1,7 @@
+.anito-canvas {
+  height: 250px;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}

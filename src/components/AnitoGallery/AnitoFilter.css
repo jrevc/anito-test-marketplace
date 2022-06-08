@@ -1,0 +1,74 @@
+.filter-section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #F5F1EC;
+}
+
+.filter-section:last-of-type {
+  border-bottom: none;
+}
+
+.filter-class {
+  padding: 2px 0;
+}
+
+.filter-title img {
+  width: 18px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.filter-title h1 {
+  font-size: 14px;
+  display: inline;
+  vertical-align: middle;
+  color: #444;
+
+}
+
+h2 {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.filter-checkbox,
+.filter-checkbox-label {
+  vertical-align: middle;
+}
+
+.filter-class-label img {
+  top: -1px;
+  margin-left: 6px;
+  margin-right: 2px;
+}
+
+.filter-stat-label {
+  padding: 4px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.filter-stat-label h3,
+.filter-class-label h3 {
+  display: inline;
+  font-size: 12px;
+  color: #444;
+  font-weight: normal;
+}
+
+.filter-stat-label span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #eb4355;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+input[type="range"]::-webkit-slider-runnable-track,
+input[type=range]::-moz-range-track {
+  background: #00ff00;
+}

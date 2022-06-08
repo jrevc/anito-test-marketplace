@@ -1,0 +1,8 @@
+aside {
+  width: 350px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 40px;
+}

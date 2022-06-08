@@ -1,0 +1,163 @@
+.anito-container {
+  border: 1px solid #f5f1ec;
+  background-size: 50%;
+  background-position: 0% 0;
+  /* background-repeat: no-repeat; */
+  border-radius: 8px;
+  padding: 10px 0;
+  margin: 20px;
+  width: 200px;
+  height: 320px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  user-select: none;
+  cursor: pointer;
+  transition-property: box-shadow, animation-play-state;
+  transition-duration: 700ms;
+  transition-delay: 150ms;
+  animation: background-scroll 5s linear infinite;
+  animation-play-state: paused;
+}
+
+.anito-container.anito-rarity-1 { 
+  background-image: url(../../assets/bg_tile_common.png); 
+  box-shadow: 0 0 0 0 rgba(84, 185, 72, 1);
+}
+.anito-container.anito-rarity-2 { 
+  background-image: url(../../assets/bg_tile_epic.png); 
+  box-shadow: 0 0 0 0 rgba(235, 67, 85, 1);
+}
+.anito-container.anito-rarity-3 { 
+  background-image: url(../../assets/bg_tile_legendary.png); 
+  box-shadow: 0 0 0 0 rgba(254, 223, 89, 1);
+}
+
+.anito-container:hover {
+
+  transition-property: box-shadow, animation-play-state;
+  transition-duration: 700ms;
+  transition-delay: 0ms;
+  animation-play-state: running;
+}
+
+.anito-container.anito-rarity-1:hover {
+  box-shadow: 0 0 0 4px rgba(84, 185, 72, 1);
+}
+
+.anito-container.anito-rarity-2:hover {
+  box-shadow: 0 0 0 4px rgba(235, 67, 85, 1);
+}
+
+.anito-container.anito-rarity-3:hover {
+  box-shadow: 0 0 0 4px rgba(254, 223, 89, 1);
+}
+
+@keyframes background-scroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 45.454545%;
+  }
+}
+
+.anito-container-inner {
+  padding: 0 14px;
+  position: relative;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.anito-number span {
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  background-color: #FFE000;
+  padding: 4px 12px;
+  margin-bottom: 2px;
+  border-radius: 4px;
+  text-align: left;
+  width: auto;
+  display: inline-block;
+}
+
+.anito-glow {
+  position: absolute;
+  top: 40px;
+}
+
+.anito-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.anito-details-price {
+  display: flex;
+  align-items: center;
+}
+
+.anito-details-price-symbol {
+  padding: 2px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.anito-rarity-3 .anito-details-price-symbol {
+  background-color: #333;
+}
+
+.anito-details-price-symbol img {
+  width: 30px;
+  display: block;
+}
+
+.anito-details-price-amount {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  line-height: 22px;
+}
+
+.anito-details-price-unit {
+  font-size: 14px;
+  color: white;
+}
+
+.anito-rarity-3 .anito-details-price-amount,
+.anito-rarity-3 .anito-details-price-unit {
+  color: #333;
+}
+
+.anito-details-stats {
+  padding-right: 10px;
+}
+
+.anito-details-stats-row {
+  display: flex;
+  align-items: center;
+  margin: 2px 0;
+}
+
+.anito-details-stats-row img {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.anito-details-stats-row span {
+  color: white;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.anito-rarity-3 .anito-details-stats-row img {
+  filter: invert(0.8);
+}
+
+.anito-rarity-3 .anito-details-stats-row span {
+  color: #333;
+}

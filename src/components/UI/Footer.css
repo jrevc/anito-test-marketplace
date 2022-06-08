@@ -1,0 +1,30 @@
+footer {
+  background-color: #090C21;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.footer-logo {
+  max-width: 300px;
+}
+
+.footer-logo img {
+  width: 100%;
+}
+
+.social-media {
+  padding-bottom: 24px;
+}
+
+.footer-icon {
+  color: white;
+  font-size: 36px;
+  margin-left: 28px;
+}
