@@ -40,7 +40,7 @@ const AnitoContainer = (props) => {
         <AnitoClassLabel anitoClass={className}>{props.name}</AnitoClassLabel>
       </div>
       <img src={process.env.PUBLIC_URL + "/images/glow.png"} className="anito-glow" alt="Anito glow"></img>
-      <AnitoGL
+      {/*<AnitoGL
         classname="anito-body"
         id={id}
         name={props.name}
@@ -50,7 +50,7 @@ const AnitoContainer = (props) => {
         tail={dna.tail}
         eyes={dna.eyes}
         hp={props.hp}
-      />
+      />*/}
       <div className="anito-container-inner anito-details">
         <div className="anito-details-price">
           <div className="anito-details-price-symbol">

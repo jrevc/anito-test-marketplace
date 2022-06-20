@@ -34,11 +34,14 @@ nav ul li {
   margin-right: 10px;
 }
 
-button {
+button,
+.header-link {
+  display: inline-block;
   font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   font-size: 16px;
   text-align: center;
+  text-decoration: none;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -48,6 +51,7 @@ button {
   transition: background-color 300ms;
 }
 
-button:hover {
+button:hover,
+.header-link:hover {
   background-color: #4f2c94;
 }

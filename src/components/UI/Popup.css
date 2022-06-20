@@ -1,0 +1,101 @@
+.popup {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-box {
+  min-height: 40px;
+  min-width: 40px;
+  max-width: 50%;
+  border: 2px solid #F5F1EC;
+  border-radius: 8px;
+  box-shadow: 2px 4px 8px 4px rgba(0, 0, 0, 0.25);
+  background-color: #F5F1EC;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-image: url(../../assets/bg_tile_violet.png); 
+  background-size: 25%;
+  background-position: 0% 0;
+  overflow: hidden;
+}
+
+.popup-title {
+  background-color: #EB4355;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.popup-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.popup-content-image {
+  width: 250px;
+}
+
+.popup-content-image img {
+  width: 100%;
+}
+
+.popup-content-description {
+ 
+  border-radius: 8px;
+  padding: 10px;
+  color: white;
+  width: 200px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #F5F1EC;
+  padding: 20px;
+}
+
+.button {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition-property: color, background-color;
+  transition-duration: 300ms;
+
+}
+
+.btn-ok {
+  border-color: #EB4355;
+  font-weight: bold;
+  color: #333;
+}
+
+.btn-ok:hover {
+  background-color: #EB4355;
+  color: white;
+}
+
+.btn-back {
+  border-color: #E5E5E5;
+  color: #666;
+}
+
+.btn-back:hover {
+  background-color: #666;
+  color: #E5E5E5;
+}

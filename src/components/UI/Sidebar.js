@@ -8,7 +8,8 @@ const Sidebar = (props) => {
 
   return (
     <aside>
-      <AnitoFilter onFilterChange={filterChangeHandler} />
+      {/*<AnitoFilter onFilterChange={filterChangeHandler} />*/}
+      {props.children}
     </aside>
   );
 }

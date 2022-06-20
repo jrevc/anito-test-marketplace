@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import AnitoClassLabel from "./AnitoClassLabel";
+import SidebarFilter from "../UI/SidebarFilter";
 import "./AnitoFilter.css";
 
 const AnitoFilter = (props) => {
@@ -37,10 +38,7 @@ const AnitoFilter = (props) => {
 
   return (
     <div>
-      <div className="filter-section filter-title">
-        <img src={process.env.PUBLIC_URL + "/images/filter-gray.png"} alt="Filter" />
-        <h1>Filters</h1>
-      </div>
+      <SidebarFilter />
       <div className="filter-section">
         <h2>Anito Class</h2>
         <div className="filter-class">

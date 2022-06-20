@@ -17,6 +17,7 @@ const AnitoGL = (props) => {
 	async function load() {
 		canvas = document.getElementById(props.id);
 		context = canvas.getContext("2d");
+		// context.clearRect(0, 0, context.width, context.height);
 		skeletonRenderer = new spine.SkeletonRenderer(context);
 
 		// Load the assets.

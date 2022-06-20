@@ -1,0 +1,8 @@
+.item-gallery {
+  max-width: 1000px;
+  margin-left: 20px;
+  padding: 20px 0;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}

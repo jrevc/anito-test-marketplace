@@ -1,0 +1,117 @@
+.item-container {
+  height: 230px;
+  width: 230px;
+  margin: 20px;
+  background-size: 50%;
+  background-position: 0% 0;
+  border: 1px solid #f5f1ec;
+  border-radius: 8px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  user-select: none;
+  cursor: pointer;
+
+  transition-property: box-shadow, animation-play-state;
+  transition-duration: 700ms;
+  transition-delay: 150ms;
+  animation: item-background-scroll 5s linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes item-background-scroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+.item-container.type-summon {
+  background-image: url(../../assets/bg_tile_violet.png);
+  box-shadow: 0 0 0 0 rgba(111, 51, 168, 1);
+}
+.item-container.type-rarity {
+  background-image: url(../../assets/bg_tile_legendary.png);
+  box-shadow: 0 0 0 0 rgba(254, 223, 89, 1);
+}
+.item-container.type-class {
+  background-image: url(../../assets/bg_tile_epic.png);
+  box-shadow: 0 0 0 0 rgba(235, 67, 85, 1);
+}
+.item-container.type-stat {
+  background-image: url(../../assets/bg_tile_common.png);
+  box-shadow: 0 0 0 0 rgba(84, 185, 72, 1);
+}
+
+.item-container:hover {
+  animation-play-state: running;
+}
+
+.item-container.type-summon:hover {
+  box-shadow: 0 0 0 4px rgba(111, 51, 168, 1);
+}
+.item-container.type-rarity:hover {
+  box-shadow: 0 0 0 4px rgba(254, 223, 89, 1);
+}
+.item-container.type-class:hover {
+  box-shadow: 0 0 0 4px rgba(235, 67, 85, 1);
+}
+.item-container.type-stat:hover {
+  box-shadow: 0 0 0 4px rgba(84, 185, 72, 1);
+}
+
+.item-name h4 {
+  color: white;
+  text-align: center;
+}
+
+.type-rarity .item-name h4,
+.type-rarity .item-price-display {
+  color: #333;
+}
+
+.item-image {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.item-image img {
+  width: 100%;
+}
+
+.item-price-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-price {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.item-price-symbol {
+  padding: 2px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.item-price-symbol img {
+  width: 30px;
+  display: block;
+}
+
+.item-price-amount {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.item-price-unit {
+  font-size: 14px;
+  text-transform: uppercase;
+}
