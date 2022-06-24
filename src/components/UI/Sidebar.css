@@ -1,6 +1,7 @@
 aside {
   width: 350px;
-  height: 100vh;
+  flex-shrink: 0;
+  min-height: calc(100vh - (93px + 244px));
   position: sticky;
   top: 0;
   background-color: white;

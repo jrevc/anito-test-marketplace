@@ -6,3 +6,7 @@
   align-content: flex-start;
   flex-wrap: wrap;
 }
+
+.item-link {
+  text-decoration: none;
+}

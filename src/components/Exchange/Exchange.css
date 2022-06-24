@@ -1,0 +1,123 @@
+.exchange-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - (93px + 244px));
+}
+
+.exchange-page h1 {
+  width: 100%;
+}
+
+.exchange-form {
+  align-self: center;
+  width: 400px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.exchange-form label,
+.exchange-input {
+  display: block;
+}
+
+.exchange-form label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  padding: 6px 0;
+}
+
+.exchange-input {
+  width: 100%;
+  border: 1px solid #f3e3d0;
+  border-radius: 4px;
+  transition-property: border-color;
+  transition-duration: 150ms;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.exchange-input:hover {
+  border-color: #ffb593;
+}
+
+.exchange-input:focus-within {
+  outline: none;
+  border: 1px solid #eb4355;
+}
+
+.exchange-input input[type="number"] {
+  padding: 16px 6px 16px 18px;
+  border: none;
+  background-color: transparent;
+  flex-grow: 1;
+}
+
+.exchange-input input[type="number"]:focus {
+  outline: none;
+}
+
+.exchange-input-unit {
+  width: 100px;
+  margin: 6px;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #f3e3d0;
+}
+
+.exchange-input-unit img {
+  height: 26px;
+}
+
+.exchange-input-unit span {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  color: #666;
+  font-size: 14px;
+}
+
+.exchange-swap {
+  margin: 0 auto;
+}
+
+.exchange-swap button {
+  height: 100%;
+  margin-top: 20px;
+  padding: 8px;
+  background-color: white;
+  border: 1px solid #f3e3d0;
+  transition-property: border-color;
+  transition-duration: 150ms;
+}
+
+.exchange-swap button:hover {
+  border-color: #ffb593;
+  cursor: pointer;
+}
+
+.exchange-swap img {
+  width: 28px;
+  display: block;
+}
+
+.exchange-submit {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.exchange-submit-btn {
+  background-color: #eb4355;
+}
+
+.exchange-submit-btn:hover {
+  background-color: #c72737;
+}

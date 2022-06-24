@@ -9,7 +9,7 @@ const AnitoFilter = (props) => {
   const [HPFilter, setHPFilter] = useState("1");
   const [defFilter, setDefFilter] = useState("1");
 
-  const onClassFilterChange = (event) => {
+  const onClassFilterChange = (event, atk = atkFilter, hp = HPFilter, def = defFilter) => {
     let classList = Array.from(document.querySelectorAll("input[name=name-anito-class]"));
     let filteredList = classList.filter(
       anitoClass => anitoClass.checked
@@ -21,19 +21,23 @@ const AnitoFilter = (props) => {
         anitoClass => anitoClass.value
       )
     }
-    props.onFilterChange(filteredList);
+
+    props.onFilterChange(filteredList, atk, hp, def);
   }
 
   const onAtkSliderChange = (event) => {
-    setAtkFilter(event.target.value);
+    setAtkFilter(event.target.value)
+    onClassFilterChange(event, event.target.value, HPFilter, defFilter);
   }
 
   const onHPSliderChange = (event) => {
-    setHPFilter(event.target.value);
+    setHPFilter(event.target.value)
+    onClassFilterChange(event, atkFilter, event.target.value, defFilter);
   }
 
   const onDefSliderChange = (event) => {
     setDefFilter(event.target.value);
+    onClassFilterChange(event, atkFilter, HPFilter, event.target.value);
   }
 
   return (

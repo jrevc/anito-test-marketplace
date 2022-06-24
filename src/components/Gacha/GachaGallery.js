@@ -22,6 +22,7 @@ const GachaGallery = (props) => {
               image={gacha.image}
               price={gacha.price}
               currency={gacha.currency}
+              quantity={gacha.quantity}
             />
           </NavLink>
         ))}

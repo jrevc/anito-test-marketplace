@@ -19,6 +19,10 @@
   animation: summon-pulse 1.5s infinite;
 }
 
+.summon-title {
+  font-size: 24px;
+}
+
 @keyframes summon-pulse {
   0% {
     filter: brightness(1);

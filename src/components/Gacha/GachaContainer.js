@@ -11,13 +11,19 @@ const GachaContainer = (props) => {
       <div className="gacha-image">
         <img src={process.env.PUBLIC_URL + "/images/boxes/" + props.image} />
       </div>
-      <div className="gacha-price">
-        <div className="gacha-price-symbol">
-          <img src={process.env.PUBLIC_URL + "/images/" + props.currency + ".png"} />
+      <div className="gacha-details">
+        <div className="gacha-price">
+          <div className="gacha-price-symbol">
+            <img src={process.env.PUBLIC_URL + "/images/" + props.currency + ".png"} />
+          </div>
+          <div className="gacha-price-display">
+            <div className="gacha-price-amount">{props.price}</div>
+            <div className="gacha-price-unit">{props.currency}</div>
+          </div>
         </div>
-        <div className="gacha-price-display">
-          <div className="gacha-price-amount">{props.price}</div>
-          <div className="gacha-price-unit">{props.currency}</div>
+        <div className="gacha-remaining">
+          <div className="gacha-remaining-current">{parseInt(props.quantity).toLocaleString("en-US")}</div>
+          <div className="gacha-remaining-label">Remaining</div>
         </div>
       </div>
     </div>

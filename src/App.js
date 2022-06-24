@@ -6,14 +6,22 @@ import AnitoGallery from "./components/AnitoGallery/AnitoGallery";
 import Sidebar from "./components/UI/Sidebar";
 import Content from "./components/UI/Content";
 import AnitoFilter from "./components/AnitoGallery/AnitoFilter";
+import AnitoContainer from "./components/AnitoGallery/AnitoContainer";
 
 function App() {
   let anitoList = getAnitos();
   const[visibleAnitoList, setVisibleAnitoList] = useState(anitoList);
 
-  const filterChangeHandler = (anitos) => {
+  const filterChangeHandler = (anitos, atk, hp, def) => {
     let visibleAnitos = anitoList.filter(
-      anito =>  anitos.includes(anito.dna.substring(2, 4))
+      anito => {
+        return (
+          anitos.includes(anito.dna.substring(2, 4)) &&
+          parseInt(anito.atk, 10) >= atk &&
+          parseInt(anito.hp, 10) >= hp &&
+          parseInt(anito.def, 10) >= def
+        )
+      }
     )
     setVisibleAnitoList(visibleAnitos);
   }

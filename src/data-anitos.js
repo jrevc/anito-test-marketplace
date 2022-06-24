@@ -8,6 +8,7 @@ let anitoList = [
     atk: "8",
     hp: "5",
     def: "15",
+    owner: "MadCupcake",
   },
   {
     name: "Momoa",
@@ -18,6 +19,7 @@ let anitoList = [
     atk: "18",
     hp: "8",
     def: "11",
+    owner: "Namor",
   },
   {
     name: "Bituin",
@@ -28,6 +30,7 @@ let anitoList = [
     atk: "6",
     hp: "8",
     def: "9",
+    owner: "StaceyComments",
   }, 
   {
     name: "Razzmatazz",
@@ -38,6 +41,7 @@ let anitoList = [
     atk: "9",
     hp: "10",
     def: "6",
+    owner: "MissingNo",
   }, 
   {
     name: "Balawis",
@@ -48,6 +52,7 @@ let anitoList = [
     atk: "5",
     hp: "5",
     def: "6",
+    owner: "Gaben",
   },
   {
     name: "Bulalord",
@@ -58,6 +63,7 @@ let anitoList = [
     atk: "11",
     hp: "4",
     def: "5",
+    owner: "PointClickPics",
   },
   {
     name: "Nilagod",
@@ -68,6 +74,7 @@ let anitoList = [
     atk: "7",
     hp: "20",
     def: "10",
+    owner: "adamgreattweet",
   },
   {
     name: "Lechonk",
@@ -78,6 +85,7 @@ let anitoList = [
     atk: "11",
     hp: "12",
     def: "3",
+    owner: "BigItaly85",
   },
   {
     name: "Bojack",
@@ -88,6 +96,7 @@ let anitoList = [
     atk: "9",
     hp: "22",
     def: "6",
+    owner: "Mords",
   },
   {
     name: "Kabayo",
@@ -98,6 +107,7 @@ let anitoList = [
     atk: "13",
     hp: "14",
     def: "9",
+    owner: "mellifex",
   },
   {
     name: "Pong",
@@ -108,6 +118,7 @@ let anitoList = [
     atk: "12",
     hp: "7",
     def: "10",
+    owner: "HarryRox",
   },
   {
     name: "Kadahon",
@@ -118,6 +129,7 @@ let anitoList = [
     atk: "8",
     hp: "11",
     def: "3",
+    owner: "TwoGuysRecords",
   },
 ];
 
@@ -128,7 +140,8 @@ let gachaList = [
     image: "box_common.png",
     price: "40",
     currency: "busd",
-    description: "This is a common blind box."
+    description: "This is a common blind box.",
+    quantity: "8000"
   },
   {
     key: "01",
@@ -136,7 +149,8 @@ let gachaList = [
     image: "box_epic.png",
     price: "85",
     currency: "busd",
-    description: "This is an epic blind box. Epic Anitos look more impressive!"
+    description: "This is an epic blind box. Epic Anitos look more impressive!",
+    quantity: "1750"
   },
   {
     key: "02",
@@ -144,7 +158,8 @@ let gachaList = [
     image: "box_legendary.png",
     price: "175",
     currency: "busd",
-    description: "This is a legendary blind box. Legendary Anitos are unique and majestic!"
+    description: "This is a legendary blind box. Legendary Anitos are unique and majestic!",
+    quantity: "250"
   },
 ];
 
@@ -157,7 +172,8 @@ let itemList = [
     currency1: "laro",
     price2: "500",
     currency2: "ginto",
-    type: "summon"
+    type: "summon",
+    description: "Summoning Stone description here."
   },
   {
     key: "stone_rarity",
@@ -167,7 +183,8 @@ let itemList = [
     currency1: "laro",
     price2: "2,250",
     currency2: "ginto",
-    type: "rarity"
+    type: "rarity",
+    description: "Rarity Stone description here."
   },
   {
     key: "stone_kiwig",
@@ -177,7 +194,8 @@ let itemList = [
     currency1: "laro",
     price2: "250",
     currency2: "ginto",
-    type: "class"
+    type: "class",
+    description: "Kiwig Stone description here."
   },
   {
     key: "stone_sarangay",
@@ -187,7 +205,8 @@ let itemList = [
     currency1: "laro",
     price2: "250",
     currency2: "ginto",
-    type: "class"
+    type: "class",
+    description: "Sarangay Stone description here."
   },
   {
     key: "stone_siyokoy",
@@ -197,7 +216,8 @@ let itemList = [
     currency1: "laro",
     price2: "250",
     currency2: "ginto",
-    type: "class"
+    type: "class",
+    description: "Siyokoy Stone description here."
   },
   {
     key: "stone_tikbalang",
@@ -207,7 +227,8 @@ let itemList = [
     currency1: "laro",
     price2: "250",
     currency2: "ginto",
-    type: "class"
+    type: "class",
+    description: "Tikbalang Stone description here."
   },
   {
     key: "stone_atk",
@@ -217,7 +238,8 @@ let itemList = [
     currency1: "laro",
     price2: "500",
     currency2: "ginto",
-    type: "stat"
+    type: "stat",
+    description: "ATK Stone description here."
   },
   {
     key: "stone_hp",
@@ -227,7 +249,8 @@ let itemList = [
     currency1: "laro",
     price2: "500",
     currency2: "ginto",
-    type: "stat"
+    type: "stat",
+    description: "HP Stone description here."
   },
   {
     key: "stone_def",
@@ -237,12 +260,30 @@ let itemList = [
     currency1: "laro",
     price2: "500",
     currency2: "ginto",
-    type: "stat"
+    type: "stat",
+    description: "DEF Stone description here."
+  },
+]
+
+let currencyList = [
+  {
+    name: "PERLAS",
+    image: "perlas.png"
+  },
+  {
+    name: "GINTO",
+    image: "ginto.png"
   },
 ]
 
 export function getAnitos() {
   return anitoList;
+}
+
+export function getAnito(i) {
+  return anitoList.find(
+    a => a.index === i
+  )
 }
 
 export function getGachas() {
@@ -257,4 +298,14 @@ export function getGacha(rarity) {
 
 export function getItems() {
   return itemList;
+}
+
+export function getItem(key) {
+  return itemList.find(
+    item => item.key === key
+  )
+}
+
+export function getCurrency(index) {
+  return currencyList[index]
 }

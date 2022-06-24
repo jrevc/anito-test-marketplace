@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import AnitoContainer from "./AnitoContainer"
 import "./AnitoGallery.css"
 
@@ -7,17 +8,23 @@ const AnitoGallery = (props) => {
       <div className="anito-gallery-container">
         {
           props.anitos.map(anito => (
-            <AnitoContainer
-              name={anito.name}
-              index={anito.index}
-              dna={anito.dna}
-              price={anito.price}
-              currency={anito.currency}
-              atk={anito.atk}
-              hp={anito.hp}
-              def={anito.def}
+            <NavLink
+              className="anito-link"
+              to={"/" + anito.index}
               key={anito.index}
-            />
+            >
+              <AnitoContainer
+                name={anito.name}
+                index={anito.index}
+                dna={anito.dna}
+                price={anito.price}
+                currency={anito.currency}
+                atk={anito.atk}
+                hp={anito.hp}
+                def={anito.def}
+                key={anito.index}
+              />
+            </NavLink>
           ))
         }
       </div>

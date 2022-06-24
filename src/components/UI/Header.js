@@ -15,6 +15,7 @@ const Header = () => {
               <li><Link to="/summon" className="header-link">Summoning</Link></li>
               <li><Link to="/gacha" className="header-link">Gacha</Link></li>
               <li><Link to="/items" className="header-link">Item Market</Link></li>
+              <li><Link to="/exchange" className="header-link">Token Exchange</Link></li>
             </ul>
           </nav>
         </div>
