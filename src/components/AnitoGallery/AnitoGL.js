@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import * as spinecanvas from "@esotericsoftware/spine-canvas";
+// import * as spinegl from "@esotericsoftware/spine-webgl";
 import "./AnitoGL.css";
 const spine = spinecanvas;
+// const spine = spinegl;
 
 const AnitoGL = (props) => {
   let lastFrameTime = Date.now() / 1000;

@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import { getAnito } from "../../data-anitos";
 import AnitoClassLabel from "./AnitoClassLabel";
+import AnitoGL from "./AnitoGL";
 import "./AnitoPage.css";
 
 const AnitoPage = () => {
@@ -79,7 +80,17 @@ const AnitoPage = () => {
       <div className="anito-page-left">
         <NavLink to="/" className="back-link">&#11207; Back</NavLink>
         <div className="anito-image-container">
-
+          <AnitoGL
+            classname="anito-body"
+            id={anito.index}
+            name={anito.name}
+            class={className}
+            body={dna.body}
+            hair={dna.hair}
+            tail={dna.tail}
+            eyes={dna.eyes}
+            hp={anito.hp}
+          />
         </div>
       </div>
       <div className="anito-page-right">

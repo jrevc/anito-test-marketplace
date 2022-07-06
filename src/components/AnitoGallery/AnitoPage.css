@@ -60,6 +60,14 @@
   background-size: 25%;
   background-position: center center;
   border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.anito-image-container canvas {
+  position: relative;
 }
 
 .anito-rarity-1 .anito-image-container { background-image: url(../../assets/bg_tile_common.png) }

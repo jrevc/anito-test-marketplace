@@ -79,7 +79,7 @@ let anitoList = [
   {
     name: "Lechonk",
     index: "990841",
-    dna: "0104-006033010007",
+    dna: "0104-006023010007",
     price: "70",
     currency: "laro",
     atk: "11",

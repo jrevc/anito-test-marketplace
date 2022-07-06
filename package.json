@@ -4,10 +4,8 @@
   "private": true,
   "proxy": "http://localhost:3000",
   "dependencies": {
-    "@esotericsoftware/spine-canvas": "^4.2.3",
-    "@esotericsoftware/spine-core": "^4.2.3",
-    "@esotericsoftware/spine-player": "^4.2.3",
-    "@esotericsoftware/spine-webgl": "^4.2.3",
+    "@esotericsoftware/spine-canvas": "^4.2.4",
+    "@esotericsoftware/spine-webgl": "^4.2.4",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
