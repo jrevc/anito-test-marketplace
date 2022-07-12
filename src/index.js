@@ -21,7 +21,7 @@ import Exchange from "./components/Exchange/Exchange";
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
 root.render(
-  <BrowserRouter basename="/anito-market-v1">
+  <BrowserRouter basename="/anito-market-v2">
     <Routes>
       <Route path="/" element={<Header />}>
         <Route path="/:anitoKey" element={<AnitoPage />} />

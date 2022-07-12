@@ -1,9 +1,7 @@
-import {
-  useParams,
-  NavLink,
-} from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import { getAnito } from "../../data-anitos";
 import AnitoClassLabel from "./AnitoClassLabel";
+import AnitoPrice from "./AnitoPrice";
 import AnitoGL from "./AnitoGL";
 import "./AnitoPage.css";
 
@@ -18,6 +16,8 @@ const AnitoPage = () => {
     tail: Number(anito.dna.substring(11, 14)),
     eyes: Number(anito.dna.substring(14)),
   };
+  let heightBase = 0.9;
+  let heightMod = heightBase * (1 + 0.05 * (anito.hp / 2));
   let className;
   let rarity;
   // let id = "id-" + props.index;
@@ -53,9 +53,9 @@ const AnitoPage = () => {
       className = "kiwig";
   }
 
-  const ToProper = text => {
+  const ToProper = (text) => {
     return text[0].toUpperCase() + text.slice(1).toLowerCase();
-  }
+  };
 
   let atkBar1 = anito.atk > 5 ? 100 : (anito.atk / 5) * 100;
   let atkBar2 = anito.atk > 10 ? 100 : ((anito.atk - 5) / 5) * 100;
@@ -78,9 +78,11 @@ const AnitoPage = () => {
   return (
     <div className={"anito-page anito-rarity-" + dna.rarity}>
       <div className="anito-page-left">
-        <NavLink to="/" className="back-link">&#11207; Back</NavLink>
+        <NavLink to="/" className="back-link">
+          &#11207; Back
+        </NavLink>
         <div className="anito-image-container">
-          <AnitoGL
+          {/* <AnitoGL
             classname="anito-body"
             id={anito.index}
             name={anito.name}
@@ -90,105 +92,172 @@ const AnitoPage = () => {
             tail={dna.tail}
             eyes={dna.eyes}
             hp={anito.hp}
+          /> */}
+          <img
+            className="anito-image-single"
+            style={{transform: "scale(" + heightMod + ")"}}
+            src={"https://admin.anitolegends.com/assets/" + anito.dna + ".png"}
           />
+        </div>
+        <div className="anito-purchase">
+          <AnitoPrice currency={anito.currency} price={anito.price} nocolor />
+          <div className="anito-buy-button">
+            <button type="button">Buy now</button>
+          </div>
         </div>
       </div>
       <div className="anito-page-right">
-        <div className="anito-page-id">
-          {"#" + anito.index}
-        </div>
+        <div className="anito-page-id">{"#" + anito.index}</div>
         <div className="anito-page-details">
           <div className="anito-page-details-left">
             <h1>{anito.name}</h1>
-            <AnitoClassLabel className="anito-page-class" anitoClass={className}>{rarity + " " + ToProper(className)}</AnitoClassLabel>
-            <h4>Owned by <span>{anito.owner}</span></h4>
+            <AnitoClassLabel
+              className="anito-page-class"
+              anitoClass={className}
+            >
+              {rarity + " " + ToProper(className)}
+            </AnitoClassLabel>
+            <h4>
+              Owned by <span>{anito.owner}</span>
+            </h4>
           </div>
           <div className="anito-page-details-right">
             <div className="anitos-summoned">
               <h4>Anitos summoned</h4>
-              <span>0/3</span>
+              <span>{anito.summons}/3</span>
             </div>
           </div>
         </div>
         <div className="anito-page-stats">
           <h4>Stats</h4>
           <div className="stat-display">
-            <div className="stat-display-value">
-              {anito.atk}
-            </div>
+            <div className="stat-display-value">{anito.atk}</div>
             <div className="stat-display-graphics">
               <div className="stat-number">
-                <img src={process.env.PUBLIC_URL + "/images/sword_gray.png"} alt="Sword icon" />Attack
+                <img
+                  src={process.env.PUBLIC_URL + "/images/sword_gray.png"}
+                  alt="Sword icon"
+                />
+                Attack
               </div>
               <div className="stat-display-graph">
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: atkBar1 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: atkBar1 + "%" }}
+                  ></div>
                 </div>
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: atkBar2 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: atkBar2 + "%" }}
+                  ></div>
                 </div>
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: atkBar3 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: atkBar3 + "%" }}
+                  ></div>
                 </div>
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: atkBar4 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: atkBar4 + "%" }}
+                  ></div>
                 </div>
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: atkBar5 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: atkBar5 + "%" }}
+                  ></div>
                 </div>
               </div>
             </div>
           </div>
           <div className="stat-display">
-            <div className="stat-display-value">
-              {anito.hp}
-            </div>
+            <div className="stat-display-value">{anito.hp}</div>
             <div className="stat-display-graphics">
               <div className="stat-number">
-                <img src={process.env.PUBLIC_URL + "/images/heart_gray.png"} alt="Heart icon" />Hit Points
+                <img
+                  src={process.env.PUBLIC_URL + "/images/heart_gray.png"}
+                  alt="Heart icon"
+                />
+                Hit Points
               </div>
               <div className="stat-display-graph">
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: hpBar1 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: hpBar1 + "%" }}
+                  ></div>
                 </div>
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: hpBar2 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: hpBar2 + "%" }}
+                  ></div>
                 </div>
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: hpBar3 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: hpBar3 + "%" }}
+                  ></div>
                 </div>
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: hpBar4 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: hpBar4 + "%" }}
+                  ></div>
                 </div>
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: hpBar5 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: hpBar5 + "%" }}
+                  ></div>
                 </div>
               </div>
             </div>
           </div>
           <div className="stat-display">
-            <div className="stat-display-value">
-              {anito.def}
-            </div>
+            <div className="stat-display-value">{anito.def}</div>
             <div className="stat-display-graphics">
               <div className="stat-number">
-                <img src={process.env.PUBLIC_URL + "/images/shield_gray.png"} alt="Shield icon" />Defense
+                <img
+                  src={process.env.PUBLIC_URL + "/images/shield_gray.png"}
+                  alt="Shield icon"
+                />
+                Defense
               </div>
               <div className="stat-display-graph">
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: defBar1 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: defBar1 + "%" }}
+                  ></div>
                 </div>
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: defBar2 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: defBar2 + "%" }}
+                  ></div>
                 </div>
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: defBar3 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: defBar3 + "%" }}
+                  ></div>
                 </div>
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: defBar4 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: defBar4 + "%" }}
+                  ></div>
                 </div>
                 <div className="stat-bar">
-                  <div className="stat-bar-fill" style={{width: defBar5 + "%"}}></div>
+                  <div
+                    className="stat-bar-fill"
+                    style={{ width: defBar5 + "%" }}
+                  ></div>
                 </div>
               </div>
             </div>
@@ -196,7 +265,7 @@ const AnitoPage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default AnitoPage;

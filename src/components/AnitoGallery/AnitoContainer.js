@@ -1,5 +1,6 @@
 import AnitoGL from "./AnitoGL";
 import AnitoClassLabel from "./AnitoClassLabel";
+import AnitoPrice from "./AnitoPrice";
 import "./AnitoContainer.css";
 
 const AnitoContainer = (props) => {
@@ -13,6 +14,8 @@ const AnitoContainer = (props) => {
   };
   let className;
   let id = "id-" + props.index;
+  let heightBase = 0.9;
+  let heightMod = heightBase * (1 + 0.05 * (props.hp / 2));
 
   switch (dna.class) {
     case 1:
@@ -39,8 +42,17 @@ const AnitoContainer = (props) => {
         </div>
         <AnitoClassLabel anitoClass={className}>{props.name}</AnitoClassLabel>
       </div>
-      <img src={process.env.PUBLIC_URL + "/images/glow.png"} className="anito-glow" alt="Anito glow"></img>
-      <AnitoGL
+      <img
+        src={process.env.PUBLIC_URL + "/images/glow.png"}
+        className="anito-glow"
+        alt="Anito glow"
+      ></img>
+
+      {/* 
+        Anito image area!
+        NOTE: AnitoGL enables the Spine animated versions of the Anitos. Disable .anito-image if you uncomment AnitoGL.
+      */}
+      {/* <AnitoGL
         classname="anito-body"
         id={id}
         name={props.name}
@@ -50,28 +62,35 @@ const AnitoContainer = (props) => {
         tail={dna.tail}
         eyes={dna.eyes}
         hp={props.hp}
+      /> */}
+      <img
+        className="anito-image"
+        style={{transform: "scale(" + heightMod + ")"}}
+        src={"https://admin.anitolegends.com/assets/" + props.dna + ".png"}
       />
+
       <div className="anito-container-inner anito-details">
-        <div className="anito-details-price">
-          <div className="anito-details-price-symbol">
-            <img src={process.env.PUBLIC_URL + "/images/" + props.currency + ".png"} alt={props.currency.toUpperCase()} />
-          </div>
-          <div className="anito-details-price-display">
-            <div className="anito-details-price-amount">{props.price}</div>
-            <div className="anito-details-price-unit">{props.currency.toUpperCase()}</div>
-          </div>
-        </div>
+        <AnitoPrice currency={props.currency} price={props.price} />
         <div className="anito-details-stats">
           <div className="anito-details-stats-row">
-            <img src={process.env.PUBLIC_URL + "/images/sword-white.png"} alt="Attack" />
+            <img
+              src={process.env.PUBLIC_URL + "/images/sword-white.png"}
+              alt="Attack"
+            />
             <span>{props.atk}</span>
           </div>
           <div className="anito-details-stats-row">
-            <img src={process.env.PUBLIC_URL + "/images/heart-white.png"} alt="HP" />
+            <img
+              src={process.env.PUBLIC_URL + "/images/heart-white.png"}
+              alt="HP"
+            />
             <span>{props.hp}</span>
           </div>
           <div className="anito-details-stats-row">
-            <img src={process.env.PUBLIC_URL + "/images/shield-white.png"} alt="Shield" />
+            <img
+              src={process.env.PUBLIC_URL + "/images/shield-white.png"}
+              alt="Shield"
+            />
             <span>{props.def}</span>
           </div>
         </div>

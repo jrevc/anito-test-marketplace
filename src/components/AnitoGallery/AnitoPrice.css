@@ -1,0 +1,52 @@
+.anito-details-price {
+  display: flex;
+  align-items: center;
+}
+
+.anito-details-price-symbol {
+  padding: 2px;
+  background-color: white;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.anito-rarity-3 .anito-details-price-symbol {
+  background-color: #333;
+}
+
+.anito-details-price-symbol img {
+  width: 30px;
+  display: block;
+}
+
+.anito-details-price-amount {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  line-height: 22px;
+}
+
+.anito-details-price-unit {
+  font-size: 14px;
+  color: white;
+}
+
+.anito-rarity-3 .anito-details-price-amount,
+.anito-rarity-3 .anito-details-price-unit {
+  color: #333;
+}
+
+/***************/
+/* NO COLORING */
+/***************/
+
+.nocolor-true .anito-details-price-symbol,
+.nocolor-true .anito-rarity-3 .anito-details-price-symbol {
+  background-color: white;
+  border: solid 1px #E5E5E5;
+}
+
+.nocolor-true .anito-details-price-amount,
+.nocolor-true .anito-details-price-unit {
+  color: #333;
+}
