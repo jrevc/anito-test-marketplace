@@ -20,11 +20,33 @@ footer .container {
 }
 
 .social-media {
+  display: flex;
+  gap: 28px;
   padding-bottom: 24px;
 }
 
 .footer-icon {
   color: white;
   font-size: 36px;
-  margin-left: 28px;
+}
+
+@media only screen and (max-width: 1240px) {
+  footer .container {
+    padding: 40px 30px;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-media {
+    gap: 18px;
+  }
+
+  .footer-icon {
+    font-size: 24px;
+  }
 }

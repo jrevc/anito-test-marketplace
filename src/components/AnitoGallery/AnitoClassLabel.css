@@ -10,6 +10,7 @@
   vertical-align: middle;
   font-size: 16px;
   color: white;
+  flex-shrink: 0;
 }
 
 .anito-container.anito-rarity-3 label h3 {

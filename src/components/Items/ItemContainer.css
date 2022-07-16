@@ -1,7 +1,6 @@
 .item-container {
   height: 230px;
   width: 230px;
-  margin: 20px;
   background-size: 50%;
   background-position: 0% 0;
   border: 1px solid #f5f1ec;
@@ -102,6 +101,7 @@
 
 .item-price-symbol img {
   width: 30px;
+  height: 30px;
   display: block;
 }
 
@@ -114,4 +114,16 @@
 .item-price-unit {
   font-size: 14px;
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 550px) {
+  .item-container {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .item-price-container {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

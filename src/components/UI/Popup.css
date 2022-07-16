@@ -90,7 +90,9 @@
   text-decoration: none;
   transition-property: color, background-color;
   transition-duration: 300ms;
-
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 .btn-ok {
@@ -112,4 +114,16 @@
 .btn-back:hover {
   background-color: #666;
   color: #E5E5E5;
+}
+
+@media only screen and (max-width: 860px) {
+  .popup-box {
+    max-width: 70%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .popup-box {
+    max-width: 90%;
+  }
 }

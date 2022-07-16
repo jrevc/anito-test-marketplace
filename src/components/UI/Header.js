@@ -1,7 +1,18 @@
 import { Outlet, Link } from "react-router-dom";
 import "./Header.css";
+import LineIcon from "react-lineicons";
 
 const Header = () => {
+  const headerMenuClickHandler = () => {
+    let navbar = document.querySelector("nav");
+    navbar.classList.contains("active") ? navbar.classList.remove("active") : navbar.classList.add("active");
+  }
+
+  const headerMenuCloseHandler = () => {
+    let navbar = document.querySelector("nav");
+    navbar.classList.remove("active");
+  }
+
   return (
     <div>
       <header>
@@ -11,13 +22,19 @@ const Header = () => {
           </div>
           <nav>
             <ul>
-              <li><Link to="/" className="header-link">Anito Market</Link></li>
-              <li><Link to="/summon" className="header-link">Summoning</Link></li>
-              <li><Link to="/gacha" className="header-link">Gacha</Link></li>
-              <li><Link to="/items" className="header-link">Item Market</Link></li>
-              <li><Link to="/exchange" className="header-link">Token Exchange</Link></li>
+              <a className="menu-close-button" onClick={ headerMenuClickHandler }>
+                <LineIcon name="close" size="lg"/>
+              </a>
+              <li><Link to="/" className="header-link" onClick={ headerMenuCloseHandler }>Anito Market</Link></li>
+              <li><Link to="/summon" className="header-link" onClick={ headerMenuCloseHandler }>Summoning</Link></li>
+              <li><Link to="/gacha" className="header-link" onClick={ headerMenuCloseHandler }>Gacha</Link></li>
+              <li><Link to="/items" className="header-link" onClick={ headerMenuCloseHandler }>Item Market</Link></li>
+              <li><Link to="/exchange" className="header-link" onClick={ headerMenuCloseHandler }>Token Exchange</Link></li>
             </ul>
           </nav>
+          <a className="menu-button" onClick={ headerMenuClickHandler }>
+            <LineIcon name="menu" size="lg"/>
+          </a>
         </div>
       </header>
       <Outlet />

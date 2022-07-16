@@ -6,6 +6,7 @@
   max-width: 1000px;
   margin-left: 20px;
   padding: 20px 0;
+  overflow-x: hidden;
 }
 
 .anito-gallery h2 {
@@ -17,4 +18,23 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
+  gap: 20px;
+}
+
+@media only screen and (max-width: 866px) {
+  .anito-gallery {
+    max-width: auto;
+    margin: 0;
+  }
+
+  .anito-gallery-container {
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .anito-link {
+    max-width: calc(50% - 10px);
+  }
 }

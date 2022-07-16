@@ -5,8 +5,23 @@
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .item-link {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 860px) {
+  .item-gallery {
+    justify-content: center;
+    margin: 0;
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .item-link {
+    max-width: calc(50% - 10px);
+  }
 }

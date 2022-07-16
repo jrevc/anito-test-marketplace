@@ -121,3 +121,15 @@
 .exchange-submit-btn:hover {
   background-color: #c72737;
 }
+
+@media only screen and (max-width: 1200px) {
+  .exchange-page {
+    padding: 40px 30px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .exchange-form {
+    width: 100%;
+  }
+}

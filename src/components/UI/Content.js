@@ -2,7 +2,7 @@ import "./Content.css";
 
 const Content = (props) => {
   return (
-    <main>{props.children}</main>
+    <main id="main-content">{props.children}</main>
   );
 }
 

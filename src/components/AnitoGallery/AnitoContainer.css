@@ -5,7 +5,6 @@
   /* background-repeat: no-repeat; */
   border-radius: 8px;
   padding: 10px 0;
-  margin: 20px;
   width: 200px;
   height: 320px;
   position: relative;
@@ -97,6 +96,7 @@
 .anito-details {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .anito-details-stats {
@@ -128,4 +128,10 @@
 
 .anito-rarity-3 .anito-details-stats-row span {
   color: #333;
+}
+
+@media only screen and (max-width: 500px) {
+  .anito-container {
+    max-width: 100%;
+  }
 }
