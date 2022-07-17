@@ -1,45 +1,33 @@
 import ReactDOM from 'react-dom/client';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { MoralisProvider } from 'react-moralis';
 
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import './index.css';
-import Popup from './components/UI/Popup';
-import Header from './components/UI/Header';
-import Footer from './components/UI/Footer';
 import App from './App';
-import AnitoPage from './components/AnitoGallery/AnitoPage';
-import Summon from './components/Summoning/Summon';
-import Gacha from './components/Gacha/Gacha';
-import Items from './components/Items/Items';
-import Exchange from "./components/Exchange/Exchange";
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<App />);
+const SERVER_URL = process.env.REACT_APP_MORALIS_SERVER_URL;
+const APPLICATION_ID = process.env.REACT_APP_MORALIS_APPLICATION_ID;
 
-const root = ReactDOM.createRoot(document.querySelector("#root"));
-root.render(
-  <BrowserRouter basename="/anito-market-v2">
-    <Routes>
-      <Route path="/" element={<Header />}>
-        <Route path="/:anitoKey" element={<AnitoPage />} />
-        <Route path="/" element={<App />}>
-        </Route>
-        <Route path="summon" element={<Summon />} />
-        <Route path="gacha" element={<Gacha />}>
-          <Route path=":gachaRarity" element={<Popup type="gacha" />} />
-        </Route>
-        <Route path="items" element={<Items />}>
-          <Route path=":itemName" element={<Popup type="item" />} />
-        </Route>
-        <Route path="exchange" element={<Exchange />} />
-        <Route path="*" element={
-          <p>There's nothing here!</p>
-        } />
-      </Route>
-    </Routes>
-    <Footer />
-  </BrowserRouter>
-)
+const Application = () => {
+    const isServerInfo = APPLICATION_ID && SERVER_URL ? true : false;
+
+    //Validate
+    if ((!APPLICATION_ID || !SERVER_URL) && isServerInfo === false) {
+        return (
+            <main className="my-1 d-flex justify-content-center align-items-center w-100 h-100 bg-light">
+                <h1 className="text-muted">This page is unable at the moment.</h1>
+            </main>
+        );
+    } else {
+        return (
+            <MoralisProvider appId={APPLICATION_ID} serverUrl={SERVER_URL}>
+                <App isServerInfo />
+            </MoralisProvider>
+        );
+    }
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Application />);
+
+serviceWorkerRegistration.register();

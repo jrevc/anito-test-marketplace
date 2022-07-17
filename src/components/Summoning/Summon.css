@@ -108,7 +108,7 @@
 .hill {
   /* min-height: calc(100vh - 93px); */
   display: flex;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .container-swirl {
@@ -187,7 +187,7 @@
 .anito-summoner {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   z-index: 1;
 }
@@ -356,7 +356,7 @@
   width: 100%;
   /* display: flex; */
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   position: absolute;
 }

@@ -108,9 +108,9 @@
   position: relative;
 }
 
-.anito-rarity-1 .anito-image-container { background-image: url(../../assets/bg_tile_common.png) }
-.anito-rarity-2 .anito-image-container { background-image: url(../../assets/bg_tile_epic.png) }
-.anito-rarity-3 .anito-image-container { background-image: url(../../assets/bg_tile_legendary.png) }
+.anito-rarity-1 .anito-image-container { background-image: url(/src/assets/bg_tile_common.png) }
+.anito-rarity-2 .anito-image-container { background-image: url(/src/assets/bg_tile_epic.png) }
+.anito-rarity-3 .anito-image-container { background-image: url(/src/assets/bg_tile_legendary.png) }
 
 .anito-page-details {
   display: flex;

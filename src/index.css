@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Ubuntu:wght@400;700&display=swap');
+@import '~antd/dist/antd.css';
+
 
 * {
   margin: 0;
@@ -13,5 +15,10 @@ html {
 body {
   margin: 0;
   background-color: #F5F1EC;
+}
+
+.ant-modal-content {
+  overflow: auto;
+  border-radius: 1rem;
 }
 

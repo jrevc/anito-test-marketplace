@@ -75,6 +75,7 @@ button,
 }
 
 button:hover,
+.active,
 .header-link:hover {
   background-color: #4f2c94;
 }
