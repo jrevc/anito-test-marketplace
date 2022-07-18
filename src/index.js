@@ -2,6 +2,10 @@ import ReactDOM from 'react-dom/client';
 import { MoralisProvider } from 'react-moralis';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+
+import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import './index.css';
