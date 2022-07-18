@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { getAnitos } from '../../data-anitos';
+// import { useNFTBalances } from 'react-moralis';
 
 import AnitoGallery from '../AnitoGallery/AnitoGallery';
 import Sidebar from './Sidebar';
@@ -10,6 +11,8 @@ import AnitoFilter from '../AnitoGallery/AnitoFilter';
 export default function MainContent() {
     let anitoList = getAnitos();
     const [visibleAnitoList, setVisibleAnitoList] = useState(anitoList);
+    // const [rawVisibleAnitoList, setRawVisibleAnitoList] = useState(anitoList);
+    // const { getNFTBalances } = useNFTBalances();
 
     const filterChangeHandler = (anitos, atk, hp, def) => {
         let visibleAnitos = anitoList.filter((anito) => {
@@ -21,7 +24,14 @@ export default function MainContent() {
             );
         });
         setVisibleAnitoList(visibleAnitos);
+        // NFTBalances();
     };
+
+    // const NFTBalances = () => {
+    //     let visibleAnitos = getNFTBalances({ params: { chain: 'bsc testnet' } });
+    //     console.log(visibleAnitos);
+    //     // setRawVisibleAnitoList(visibleAnitos);
+    // };
 
     return (
         <div>
@@ -29,6 +39,7 @@ export default function MainContent() {
                 <Sidebar onFilterChange={filterChangeHandler}>
                     <AnitoFilter onFilterChange={filterChangeHandler} />
                 </Sidebar>
+                {/* {rawVisibleAnitoList} */}
                 <AnitoGallery anitos={visibleAnitoList} />
             </Content>
         </div>
