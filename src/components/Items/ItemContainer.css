@@ -65,6 +65,10 @@
 .item-name h4 {
   color: white;
   text-align: center;
+  font-size: 18px;
+  line-height: 1.2;
+  color: white;
+  margin: 0;
 }
 
 .type-rarity .item-name h4,

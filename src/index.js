@@ -5,6 +5,9 @@ import {
   Route,
 } from "react-router-dom";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+
 import './index.css';
 import Popup from './components/UI/Popup';
 import Header from './components/UI/Header';

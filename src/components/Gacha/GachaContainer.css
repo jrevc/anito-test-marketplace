@@ -56,6 +56,10 @@
 
 .gacha-heading h4 {
   border: none;
+  font-size: 18px;
+  line-height: 1.2;
+  color: white;
+  margin: 0;
 }
 
 .gacha-image {

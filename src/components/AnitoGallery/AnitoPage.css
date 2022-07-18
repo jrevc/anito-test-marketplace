@@ -154,10 +154,13 @@
 
 .anito-page-class {
   display: flex;
+  align-items: center;
 }
 
 .anito-page-class h3 {
   flex-shrink: 0;
+  margin: 0;
+  font-size: 18px;
 }
 
 .anito-page-stats {
