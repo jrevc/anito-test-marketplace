@@ -44,7 +44,7 @@ const styles = {
     }
 };
 
-function Account() {
+export default function Account() {
     const { authenticate, isAuthenticated, account, chainId, logout } = useMoralis();
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [isAuthModalVisible, setIsAuthModalVisible] = useState(false);
@@ -118,7 +118,7 @@ function Account() {
                     style={styles.account}
                     onClick={() => setIsModalVisible(true)}
                 >
-                    <p className="mb-0 mx-2 text-danger fw-bolder">{getEllipsisTxt(account, 6)}</p>
+                    <p className="m-0 mx-2 text-danger fw-bolder">{getEllipsisTxt(account, 6)}</p>
                     <Blockie currentWallet scale={3} />
                 </div>
             </li>
@@ -172,5 +172,3 @@ function Account() {
         </>
     );
 }
-
-export default Account;

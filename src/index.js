@@ -1,9 +1,10 @@
 import ReactDOM from 'react-dom/client';
 import { MoralisProvider } from 'react-moralis';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import './index.css';
-import App from './App';
 
 const SERVER_URL = process.env.REACT_APP_MORALIS_SERVER_URL;
 const APPLICATION_ID = process.env.REACT_APP_MORALIS_APPLICATION_ID;
