@@ -151,7 +151,7 @@ let gachaList = [
         rarity: 'Common',
         image: 'box_common.png',
         price: '40',
-        currency: 'busd',
+        currency: 'GINTO',
         description: 'This is a common blind box.',
         quantity: '8000'
     },
@@ -160,7 +160,7 @@ let gachaList = [
         rarity: 'Epic',
         image: 'box_epic.png',
         price: '85',
-        currency: 'busd',
+        currency: 'GINTO',
         description: 'This is an epic blind box. Epic Anitos look more impressive!',
         quantity: '1750'
     },
@@ -169,7 +169,7 @@ let gachaList = [
         rarity: 'Legendary',
         image: 'box_legendary.png',
         price: '175',
-        currency: 'busd',
+        currency: 'GINTO',
         description: 'This is a legendary blind box. Legendary Anitos are unique and majestic!',
         quantity: '250'
     }
